@@ -15,7 +15,5 @@ The task is formulated as a regression problem since the target variable
 Source: UCI Machine Learning Repository  
 Format: CSV
 
-### Tools
-Python
-Pandas
+using
 Jupyter Notebook
