@@ -1,21 +1,52 @@
 # machineLearning.
-machineLearning lab repository.
-i used https://archive.ics.uci.edu/ dataset for the lab.
-the dataset is about student performance
-## Student Performance Prediction (Regression)
+machineLearning lab 3
 
-This project uses the Student Performance dataset to predict students’
-final Portuguese grades (G3) based on academic and personal attributes.
+some functions and description for future use:
 
-### Machine Learning Problem
-The task is formulated as a regression problem since the target variable
-(G3) is a continuous numerical value.
+plt.show()
 
-### Dataset
-Source: UCI Machine Learning Repository  
-Format: CSV
+Purpose: Displays the final plot.
+----------------------------------------------
+plt.figure()
 
-### Tools
-Python
-Pandas
-Jupyter Notebook
+Purpose: Creates a new figure with custom size.
+------------------------------------------
+sns.histplot()
+
+Purpose: Shows the distribution of values using histogram.
+--------------------------------------------------------------
+sns.barplot()
+
+Purpose: Creates a bar chart showing the average value.
+
+-----------------------------------------------------------------
+
+sns.lineplot()
+
+Purpose: Creates a line graph with automatic grouping and legend.
+
+
+--------------------------------------------------------------------
+sns.boxplot()
+
+Purpose: Creates a boxplot to show data distribution.
+----------------------------------------------------------
+melt()
+
+Purpose: Reshapes wide data into long format.
+---------------------------------------------------------
+reset_index()
+
+Purpose: Resets the grouped index back to a normal column.
+----------------------------------------------------------
+mean()
+
+Purpose: Calculates the average value.
+----------------------------------------------------------
+#### most important one
+groupby()
+
+Purpose: Groups data based on a column.
+-----------------------------------
+
+
