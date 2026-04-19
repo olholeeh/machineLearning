@@ -1,107 +1,59 @@
-Lab 3 about EDA:
-What does the data represent?
-Are there missing values?
-Are there outliers?
-What patterns exist?
-Which variables influence others?
+## Student Performance Prediction (student-por dataset)
 
-here,the functions that are being used for future purpose(as a reminder) for the future model: 
+### 1. Dataset Loading
 
+The dataset was loaded into a pandas DataFrame using `pd.read_csv()` with a semicolon (`;`) separator, as required for this dataset format.
 
-1-  df.head()
+### 2. Data Exploration
 
-Purpose:
-Displays the first 5 rows of the dataset.
+Initial exploration was performed using:
 
-Explanation:
-Used to preview the dataset structure and verify it loaded correctly.
-note : u can put -1 to show all rows (note from the dr aftab).
+* `df.head()` to preview the data
+* `df.info()` to understand data types
+* `df.describe()` to summarize numerical features
 
-2-
-df.columns
+The dataset contains both numerical and categorical variables related to student demographics, social factors, and academic performance.
 
-Purpose:
-Shows all column names.
+### 3. Data Cleaning
 
-Explanation:
-Used to check available variables before analysis.
+The dataset was checked for missing values using `df.isnull().sum()`.
+No significant missing values were found, so no rows or columns were removed.
 
-3-
-df.groupby()
+### 4. Feature Engineering
 
-Purpose:
-Groups data based on a categorical column.
+Categorical variables were transformed into numerical format using **One-Hot Encoding**.
+This step allows the regression model to process non-numeric data.
 
-Example:
+### 5. Data Preparation
 
-df.groupby('address')
+* The target variable was set as **G3 (final grade)**
+* Features (X) and target (y) were separated
+* Data was split into training and testing sets using a **60/40 split**
 
-4-.mean()
+### 6. Model Training
 
-Purpose:
-Calculates the average of numeric values.
+A **Linear Regression model** (same as used in the lab) was trained using a pipeline that includes preprocessing and modeling steps.
 
-Example:
+### 7. Model Evaluation
 
-df.groupby('address')['G3'].mean()
+The model was evaluated using:
 
-5-.sort_values()
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+* R² Score
 
-Purpose:
-Sorts results in ascending or descending order.
+The model achieved a good level of accuracy, indicating that prior grades (G1, G2) and other factors are strong predictors of final performance.
 
-Example:
+### 8. Visualization
 
-.sort_values(ascending=False)
+The following graphs were used to evaluate model performance:
 
-6-plt.figure()
+* **Actual vs Predicted Plot** to assess prediction accuracy
+* **Residual Plot** to analyze error distribution
+* **Histogram of Residuals** to check normality
 
-Purpose:
-Creates a new plot with specified size.
+### 9. Conclusion
 
-Explanation:
-Used to define plot dimensions.
-
-7-.plot(kind='bar')
-
-Purpose:
-Creates a bar chart.
-
-Explanation:
-Visualizes comparison between categories.
-
-8-plt.title()
-
-Purpose:
-Adds a title to the plot.
-
-9-plt.figure()
-
-Purpose:
-Creates a new plot with specified size.
-
-Explanation:
-Used to define plot dimensions.
-
-10-.plot(kind='bar')
-
-Purpose:
-Creates a bar chart.
-
-Explanation:
-Visualizes comparison between categories.
-
-11-plt.title()
-
-Purpose:
-Adds a title to the plot.
-
-12-plt.ylabel() / plt.xlabel()
-
-Purpose:
-Labels the axes of the plot.
-
-13-plt.show()
-
-Purpose:
-Displays the final plot.
+The Linear Regression model performed well on the dataset.
+Previous academic performance (especially G2) was the most influential factor in predicting final grades.
+The model demonstrates that student performance can be reasonably predicted using available features.
